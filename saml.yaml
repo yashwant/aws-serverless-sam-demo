@@ -15,8 +15,10 @@ Resources:
             CodeUri: ./
             Environment:
                 Variables:
-                    SAM_MULTIPLIER: !Ref SamMultipler
-                    ORIGIN_URL: !Ref OriginUrl
+                    SAM_MULTIPLIER: 1
+                    ORIGIN_URL: '*'
+                    # SAM_MULTIPLIER: !Ref SamMultipler
+                    # ORIGIN_URL: !Ref OriginUrl
             Events:
               GetResource:
                 Type: Api
