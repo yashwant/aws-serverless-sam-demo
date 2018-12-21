@@ -9,8 +9,10 @@ containers:
             during_build:
                 commands:
                     - npm install
-                    - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
+                    - aws cloudformation package --template-file $INPUT_FILE --s3-bucket $BUILD_OUTPUT_BUCKET --output-template-file packaged.yaml
+                    # - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
         artifacts:
             files:
-                - post-saml.yaml
-                - beta.json
+                - packaged.yaml
+                # - post-saml.yaml
+                # - beta.json
